@@ -1,3 +1,6 @@
+import javax.swing.*;
+import java.util.Scanner;
+
 public class variables {
     public static void main(String [] args) {
         // TODO: 2022-10-16 declare variables (String, Integer)
@@ -62,5 +65,40 @@ public class variables {
 
         System.out.println("Numero en octal: "+ octalNumber);
         System.out.println("Convertir de octal a nuestro numero: "+ 0702); // TODO: 2022-10-22 0 -> (prefix for octal)
+
+        // TODO: 2022-10-22 practice (number system - dynamic)
+        System.out.println("======================================");
+        System.out.println("Number system");
+        System.out.println("======================================");
+
+        showDialog();
+        terminal();
+    }
+
+    // TODO: 2022-10-22 enter a number by a dialog window 
+    public static void showDialog() {
+        String numberStr = JOptionPane.showInputDialog(null, "Ingrese un numero entero: ");
+        int numberInt = Integer.parseInt(numberStr);
+        numberSystem(numberInt);
+        JOptionPane.showMessageDialog(null, "Operacion correcta ....");
+    }
+
+    // TODO: 2022-10-22 enter a number by console
+    public static void terminal() {
+        Scanner terminal = new Scanner(System.in);
+        System.out.println("Ingrese un numero entero: ");
+        int number = terminal.nextInt();
+        numberSystem(number);
+    }
+
+    public static void numberSystem(int number) {
+        String binaryNumber = Integer.toBinaryString(number);
+        String hexadecimalNumber = Integer.toHexString(number);
+        String octalNumber = Integer.toOctalString(number);
+
+        System.out.println("Nuestro numero es: " + number);
+        System.out.println("Numero en binario: "+ binaryNumber);
+        System.out.println("Numero en hexadecimal: " +  hexadecimalNumber);
+        System.out.println("Numero en octal: "+ octalNumber);
     }
 }
