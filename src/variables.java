@@ -73,6 +73,7 @@ public class variables {
 
         showDialog();
         terminal();
+        System.out.println("============system terminated==========================");
     }
 
     // TODO: 2022-10-22 enter a number by a dialog window 
